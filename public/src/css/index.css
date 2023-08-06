@@ -59,3 +59,33 @@ body {
   background-color: #ffc107;
   color: black;
 }
+
+/* Existing CSS code */
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.footer-links a {
+  margin-right: 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.support-us button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.support-us button:hover {
+  background-color: #0056b3;
+}
