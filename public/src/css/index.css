@@ -3,17 +3,6 @@ body {
   color: #fff;
 }
 
-.card {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.card-header {
-  font-size: 24px;
-  font-weight: bold;
-}
-
 .status {
   padding: 10px 20px;
   font-size: 18px;
@@ -24,25 +13,6 @@ body {
 .buttons {
   display: flex;
   justify-content: center;
-}
-
-.btn {
-  padding: 10px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  color: white;
-  border: none;
-}
-
-.btn-danger {
-  background-color: #dc3545;
-  color: white;
-  border: none;
 }
 
 .playlist .card-body {
