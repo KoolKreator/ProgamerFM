@@ -59,3 +59,23 @@ body {
 .support-us button:hover {
   background-color: #0056b3;
 }
+
+.overlay-image {
+  position: fixed;
+  top: 0;
+  bottom: 55px; /* Adjust this value to leave space for the navbar */
+  left: 0;
+  right: 0;
+  background-image: url("../images/sitebanner.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.5; /* Adjust this value to control the opacity of the ghosted image */
+  z-index: -1;
+}
+
+@media (max-width: 576px) {
+  .overlay-image {
+    background-size: contain;
+  }
+}
