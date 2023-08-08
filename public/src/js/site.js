@@ -43,12 +43,18 @@ PlayBtn.addEventListener("click", (e) => {
     PlayBtn.querySelector("i").classList.remove("bi-play-fill");
     PlayBtn.querySelector("i").classList.add("bi-stop-fill");
     playRadioStream("https://stream.zeno.fm/swlbzqhjzu3uv");
+    document
+      .getElementById("streamProgress")
+      .classList.add("progress-bar-striped");
     document.getElementById("streamStatus").innerHTML =
       "ProGammer FM Streaming Live From Zenofm.";
   } else {
     PlayBtn.querySelector("i").classList.remove("bi-stop-fill");
     PlayBtn.querySelector("i").classList.add("bi-play-fill");
     stopRadioStream();
+    document
+      .getElementById("streamProgress")
+      .classList.remove("progress-bar-striped");
     document.getElementById("streamStatus").innerHTML = "Stream Is Stopped";
   }
 });
