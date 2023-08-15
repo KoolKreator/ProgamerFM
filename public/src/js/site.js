@@ -2,9 +2,16 @@ const TrackLabel = document.getElementById("nowPlaying");
 const PlayBtn = document.getElementById("playButton");
 const volumeBtn = document.getElementById("volumeButton");
 const stream = new Audio();
+const eventSource = new EventSource(
+  "https://api.zeno.fm/mounts/metadata/subscribe/y6wzijajoeptv"
+);
 
-//https://zenoplay.zenomedia.com/api/zenofm/nowplaying/y6wzijajoeptv
 //https://stream.zeno.fm/swlbzqhjzu3uv
+
+// let trackData = await response.json();
+function getPlayingTrack() {
+  console.log("code");
+}
 
 function playRadioStream(url) {
   stream.src = url;
@@ -33,10 +40,25 @@ stream.addEventListener("error", (e) => {
   console.log(e);
 });
 
-//Autoupdate trackLabel using data from getPlayingTrack()
-function updateTrackLabel() {
-  console.log("code");
+function updateTrackLabel(data) {
+  if (data != "" || data != null || data != undefined) {
+    TrackLabel.innerHTML = data;
+  } else {
+    TrackLabel.innerHTML = "Unavailable";
+  }
 }
+
+eventSource.addEventListener("message", (event) => {
+  const data = JSON.parse(event.data);
+  // Process the received data here
+  // console.log(data.streamTitle);
+  updateTrackLabel(data.streamTitle);
+});
+
+eventSource.addEventListener("error", (error) => {
+  // Handle any errors that occur during the connection
+  console.error(error);
+});
 
 PlayBtn.addEventListener("click", (e) => {
   if (stream.paused || stream.src == "") {
