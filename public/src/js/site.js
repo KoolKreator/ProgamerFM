@@ -1,10 +1,12 @@
 const TrackLabel = document.getElementById("nowPlaying");
+const recentTracks = document.getElementById("recentlyPlayedList");
 const PlayBtn = document.getElementById("playButton");
 const volumeBtn = document.getElementById("volumeButton");
 const stream = new Audio();
 const eventSource = new EventSource(
   "https://api.zeno.fm/mounts/metadata/subscribe/y6wzijajoeptv"
 );
+let display = 6;
 
 //https://stream.zeno.fm/swlbzqhjzu3uv
 
