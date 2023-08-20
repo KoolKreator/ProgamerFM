@@ -8,9 +8,8 @@ const eventSource = new EventSource(
 );
 let display = 6;
 
-//https://stream.zeno.fm/swlbzqhjzu3uv
+// * https://stream.zeno.fm/swlbzqhjzu3uv
 
-// let trackData = await response.json();
 function getPlayingTrack() {
   console.log("code");
 }
@@ -53,7 +52,7 @@ function updateTrackLabel(data) {
 eventSource.addEventListener("message", (event) => {
   const data = JSON.parse(event.data);
   // Process the received data here
-  // console.log(data.streamTitle);
+  //// console.log(data.streamTitle);
   updateTrackLabel(data.streamTitle);
 });
 
